@@ -1,26 +1,55 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
- /**
-  * Display all errors when APPLICATION_ENV is development.
-  */
- if ($_SERVER['APPLICATION_ENV'] == 'development') {
-     error_reporting(E_ALL);
-     ini_set("display_errors", 1);
- }
+  <?php include("includes/head.html"); ?>
 
-/**
- * This makes our life easier when dealing with paths. Everything is relative
- * to the application root now.
- */
-chdir(dirname(__DIR__));
+  <body>
 
-// Decline static file requests back to the PHP built-in webserver
-if (php_sapi_name() === 'cli-server' && is_file(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH))) {
-    return false;
-}
+    <div class="container">
 
-// Setup autoloading
-require 'init_autoloader.php';
+      <?php include("includes/navigation.html"); ?>
 
-// Run the application!
-Zend\Mvc\Application::init(require 'config/application.config.php')->run();
+      <div id="page" class="index" display="none"></div>
+
+      <!-- Start page content -->
+      <div class="container-fluid">
+
+        <div class="jumbotron">
+          <h1>WckdDev</h1>
+          <h3>Mobile Development</h3>
+          <p>Clean, Simple, Secure Apps</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <img src="../../img/Mirror-PlayStore.png" class="img-responsive img-rounded">
+          </div>
+
+          <div class="col-md-8">
+            <br />
+            <p>
+              Mirror by wckdDev is a simulated mirror app for your tablet or phone. 
+              It's great for those quick checks on appearance or for everyday use. 
+              Mirror currently has over 850,000 combined downloads and is available 
+              on the Google and Amazon app stores.
+            </p>
+            <br/>
+            <p><a href="mirror-home.php"  class="btn btn-primary" role="button">More Info &raquo;</a></p>
+          </div>
+
+        </div>
+
+      </div>
+      <br/>
+
+      <!-- End page content -->
+
+      <?php include("includes/footer.html"); ?>
+
+    </div>
+
+  <script>initPage();</script>
+  </body>
+
+</html>

@@ -3,7 +3,6 @@ body {
     padding-bottom: 40px;
 }
 
-
 .btn-primary {
   background-image: -webkit-linear-gradient(top, #666666 0%, #2e2e2e 100%);
   background-image:         linear-gradient(to bottom, #666666 0%, #2e2e2e 100%);
@@ -12,12 +11,14 @@ body {
   background-repeat: repeat-x;
   border-color: #1c1c1c;
 }
+
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #2e2e2e;
   border-color: #666666;
   background-position: 0 -15px;
 }
+
 .btn-primary:active,
 .btn-primary.active {
   background-color: #2e2e2e;
@@ -31,7 +32,7 @@ div.container a.navbar-brand {
 }
 
 div.container a.navbar-brand-pad {
-  padding: 17px 40px;
+  padding: 15px 40px;
 }
 
 .wckdDev {
